@@ -129,8 +129,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (tag.includes('Invite Only')) { 
                 tag = tag.replace('Invite Only', '');
             }
-            if (tag.includes('Given Only')) { 
-                tag = tag.replace('Given Only', '');
+            if (tag.includes('Manually Given')) { 
+                tag = tag.replace('Manually Given', '');
             }
             img.src = "./imgs/"+tag.toLowerCase()+".png";
             prependChild(parent.children[0].children[1], img)
