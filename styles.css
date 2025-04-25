@@ -220,10 +220,27 @@ header p {
     transition: all 0.3s ease;
 }
 
+.apply-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--apply);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
 .invite-link:hover {
     background-color: #138496;
     transform: translateY(-2px);
     box-shadow: 0 5px 10px rgba(23, 162, 184, 0.4);
+}
+
+.apply-link:hover {
+    background-color: rgb(175, 121, 22);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(230, 139, 2, 0.4);
 }
 
 footer {
