@@ -27,17 +27,19 @@
     <meta name="twitter:image" content="https://tags.mgcounts.com/assets/screenshot.png">
 
     <!-- Favicon -->
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
 
     <!-- Preconnect to CDN for fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&family=Space+Mono&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/odometer@0.4.8/themes/odometer-theme-default.css">
     <link rel="stylesheet" href="./styles.css?v=1">
 
     <!-- Additional SEO tags -->
@@ -53,6 +55,7 @@
         <header>
             <h1>Discord Server Tags</h1>
             <p>Find the perfect badge to display next to your name.</p><br>
+            <p>We're currently tracking <b id="total" class="odometer">0</b> guilds!</p><br>
             <hr>
             <div class="flex">
                 <p><a href="#howto" id="howto">How to Equip</a></p>
@@ -287,7 +290,7 @@
                         <div class="real">NIKO</div>
                     </div>
                 </div>
-                <div class="server-name">(˵¯͒〰¯͒˵)      /   𝓭azais  .</div>
+                <div class="server-name">(˵¯͒〰¯͒˵) / 𝓭azais .</div>
                 <div class="members">4,255 members</div>
                 <a href="https://discord.com/invite/dazais" class="invite-link">🔗 Join Server</a>
             </div>
@@ -367,8 +370,7 @@
 
             <div class="server-card" id="dslc" serverId="1074833641106063450">
                 <div class="flex">
-                    <img src="./assets/default.png"
-                        class="icon">
+                    <img src="./assets/default.png" class="icon">
                     <div class="tag">
                         <div class="real">DSLC</div><span class="apply-tag">Applied Only</span>
                     </div>
@@ -431,7 +433,8 @@
 
             <div class="server-card" id="miku" id="1029315212005888060">
                 <div class="flex">
-                    <img src="https://cdn.discordapp.com/icons/1029315212005888060/a_ec376bbe99787a907745b8fd3b70d42d.png" class="icon">
+                    <img src="https://cdn.discordapp.com/icons/1029315212005888060/a_ec376bbe99787a907745b8fd3b70d42d.png"
+                        class="icon">
                     <div class="tag">
                         <div class="real">MIKU</div><span class="invite-tag">Invite Only</span>
                     </div>
@@ -483,6 +486,7 @@
             <p>Data current as of April 23rd, 2025.</p>
         </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/odometer@0.4.8/odometer.min.js"></script>
     <script src="./script.js"></script>
 </body>
 
