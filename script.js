@@ -102,9 +102,11 @@ document.addEventListener('DOMContentLoaded', function () {
             Object.entries(data).forEach(([key, item]) => {
                 let parent = findParentFromInvite(key);
                 if (parent) {
+                    parent.children[0].style.backgroundImage = 'url("'+item.banner+'")';
                     parent.children[0].children[0].src = item.icon;
                     parent.children[1].innerText = item.name;
                     parent.children[2].innerText = item.members.toLocaleString('en-US') + ' members';
+                    parent.children[3].innerText = item.description
 
                     if (item.tag) {
                         parent.children[0].children[1].children[0] = item.tag;
