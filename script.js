@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.server-card').forEach(parent => {
             let tag = parent.children[0].children[1].innerText;
 
-            tag = tag.replace(/(Applied Only|Private|Invite Only|Manually Given)/g, '')
+            tag = tag.replace(/(Applied Only|Private|Invite Only|Manually Given|Invites Paused)/g, '')
                 .trim();
 
             if (tag.includes('Removed') || tag.includes('nopePrivate')) {
