@@ -105,35 +105,43 @@ document.addEventListener('DOMContentLoaded', function () {
                     parent.children[0].children[0].src = item.icon;
                     parent.children[1].innerText = item.name;
                     parent.children[2].innerText = item.members.toLocaleString('en-US') + ' members';
+
+                    if (item.tag) {
+                        const tagId = 'img_' + item.tag.toLowerCase();
+                        if (!document.getElementById(tagId)) {
+                            const img = document.createElement('img');
+                            img.classList.add('img');
+                            img.src = `https://cdn.discordapp.com/clan-badges/${item.serverID}/${item.tagHash}.png?size=64`;
+                            img.id = tagId;
+                            prependChild(parent.children[0].children[1], img);
+                        }
+                    }
                 }
             });
+
+            handleFallbackTags();
         });
 
-        document.querySelectorAll('.server-card').forEach(parent=>{
-            const img = document.createElement('img');
-            img.classList.add('img');
+    function handleFallbackTags() {
+        document.querySelectorAll('.server-card').forEach(parent => {
             let tag = parent.children[0].children[1].innerText;
-            if (tag.includes('Applied Only')) {
-                tag = tag.replace('Applied Only', '');
-            }
-            if (tag.includes('Removed')) {
+
+            tag = tag.replace(/(Applied Only|Private|Invite Only|Manually Given)/g, '')
+                .trim();
+
+            if (tag.includes('Removed') || tag.includes('nopePrivate')) {
                 tag = './invalid';
             }
-            if (tag.includes('nopePrivate')) {
-                tag = './invalid';
+
+            const tagId = 'img_' + tag.toLowerCase();
+            if (!document.getElementById(tagId)) {
+                const img = document.createElement('img');
+                img.classList.add('img');
+                img.src = `./imgs/${tag.toLowerCase()}.png`;
+                img.id = tagId;
+                prependChild(parent.children[0].children[1], img);
             }
-            if (tag.includes('Private')) {
-                tag = tag.replace('Private', '');
-            }
-            console.log(tag)
-            if (tag.includes('Invite Only')) { 
-                tag = tag.replace('Invite Only', '');
-            }
-            if (tag.includes('Manually Given')) { 
-                tag = tag.replace('Manually Given', '');
-            }
-            img.src = "./imgs/"+tag.toLowerCase()+".png";
-            prependChild(parent.children[0].children[1], img)
-        })
+        });
+    }
 
 });
