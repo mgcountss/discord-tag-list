@@ -109,7 +109,7 @@ header p {
     align-items: center;
     background: var(--gradient);
     color: white;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Exo 2', sans-serif;
     padding: 12px 18px;
     border-radius: 6px;
     font-weight: bold;
