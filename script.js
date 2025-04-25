@@ -145,4 +145,5 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    document.getElementById('total').innerText = document.querySelectorAll('.server-card').length;
 });
