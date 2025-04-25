@@ -107,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     parent.children[2].innerText = item.members.toLocaleString('en-US') + ' members';
 
                     if (item.tag) {
+                        parent.children[0].children[1].children[0] = item.tag;
                         const tagId = 'img_' + item.tag.toLowerCase();
                         if (!document.getElementById(tagId)) {
                             const img = document.createElement('img');
