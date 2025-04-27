@@ -148,4 +148,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     document.getElementById('total').innerText = document.querySelectorAll('.server-card').length;
+
+    fetch('https://discord.com/api/v7/invite/7Tzr23WE?with_counts=true')
+    .then(res=>res.json())
+    .then(data=>{
+        document.getElementById('totalM').innerText = data.approximate_member_count;
+        document.getElementById('onlineM').innerText = data.approximate_presence_count;
+    })
 });
