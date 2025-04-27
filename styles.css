@@ -128,6 +128,10 @@ header p {
     border: solid 1px #FFF;
 }
 
+.counter {
+    font-size: 1.5em;
+}
+
 .flex {
     display: flex;
     gap: 10px;
@@ -135,6 +139,11 @@ header p {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+}
+
+.flex2 {
+    width: 20%;
+    justify-content: space-between;
 }
 
 .icon {
@@ -406,7 +415,10 @@ footer {
 }
 
 #howto {
-    color: var(--text-light)
+    color: var(--text-light);
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 #video {
