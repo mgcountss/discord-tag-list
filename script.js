@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('total').innerText = document.querySelectorAll('.server-card').length;
 
-    fetch('https://discord.com/api/v7/invite/7Tzr23WE?with_counts=true')
+    fetch('https://discord.com/api/v7/invite/32pxDuSxS7?with_counts=true')
     .then(res=>res.json())
     .then(data=>{
         document.getElementById('totalM').innerText = data.approximate_member_count;
