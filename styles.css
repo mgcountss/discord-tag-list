@@ -42,7 +42,7 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 5px;
     position: relative;
     padding: 30px;
     border-radius: 16px;
@@ -142,6 +142,7 @@ header p {
 }
 
 .flex2 {
+    margin-top: 15px;
     width: 20%;
     justify-content: space-between;
 }
@@ -408,6 +409,11 @@ footer {
     z-index: 1;
 }
 
+.center {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
 .img {
     height: 1.25em;
     width: 1.25em;
@@ -416,7 +422,7 @@ footer {
 
 #howto {
     color: var(--text-light);
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin-top: 10px;
     margin-bottom: 30px;
 }
