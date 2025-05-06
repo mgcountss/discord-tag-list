@@ -107,50 +107,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     parent.children[1].innerText = item.name;
                     parent.children[2].innerText = item.members.toLocaleString('en-US') + ' members';
                     parent.children[3].innerText = item.description
-
-                    if (item.tag) {
-                        parent.children[0].children[1].children[0] = item.tag;
-                        const tagId = 'img_' + item.tag.toLowerCase();
-                        if (!document.getElementById(tagId)) {
-                            console.log(tagId)
-                        }
-                        document.getElementById(tagId).src = `https://cdn.discordapp.com/clan-badges/${item.serverID}/${item.tagHash}.png?size=64`;
-                        /*if (!document.getElementById(tagId)) {
-                            const img = document.createElement('img');
-                            img.classList.add('img');
-                            img.src = `https://cdn.discordapp.com/clan-badges/${item.serverID}/${item.tagHash}.png?size=64`;
-                            img.id = tagId;
-                            prependChild(parent.children[0].children[1], img);
-                        }*/
-                    }
+                    parent.children[0].children[1].children[0].src = "https://cdn.discordapp.com/clan-badges/"+item.serverID+"/"+item.tagHash+".png"
                 }
             });
-
-            handleFallbackTags();
         });
-
-    function handleFallbackTags() {
-        document.querySelectorAll('.server-card').forEach(parent => {
-            let tag = parent.children[0].children[1].innerText;
-
-            tag = tag.replace(/(Applied Only|Private|Invite Only|Manually Given|Invites Paused)/g, '')
-                .trim();
-
-            if (tag.includes('Removed') || tag.includes('nopePrivate')) {
-                tag = './invalid';
-            }
-
-            const tagId = 'img_' + tag.toLowerCase();
-            document.getElementById(tagId).src.includes('/default')
-            /*if (!document.getElementById(tagId)) {
-                const img = document.createElement('img');
-                img.classList.add('img');
-                img.src = `./imgs/${tag.toLowerCase()}.png`;
-                img.id = tagId;
-                prependChild(parent.children[0].children[1], img);
-            }*/
-        });
-    }
 
     document.getElementById('total').innerText = document.querySelectorAll('.server-card').length;
 
