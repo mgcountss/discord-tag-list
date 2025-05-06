@@ -83,9 +83,15 @@ document.addEventListener('DOMContentLoaded', function () {
         card.querySelector('.tag .img').src = `https://cdn.discordapp.com/clan-badges/${item.serverID}/${item.tagHash}.png`;
         card.querySelector('.tag .real').textContent = item.tag;
         card.querySelector('.server-name').textContent = item.name;
+        if (card.querySelector('.members')) {
         card.querySelector('.members').textContent = `${item.members.toLocaleString('en-US')} members`;
+        }
+        if (card.querySelector('.description')) {
         card.querySelector('.description').textContent = item.description;
+        }
+        if (card.querySelector('.invite-link')) {
         card.querySelector('.invite-link').href = `https://discord.com/invite/${item.value}`;
+        }
     }
 
     function fetchAndUpdateData() {
@@ -106,12 +112,12 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <img src="${item.icon}" class="icon">
                                 <div class="tag">
                                     <img class="img" src="https://cdn.discordapp.com/clan-badges/${item.serverID}/${item.tagHash}.png">
-                                    <div class="real">${item.tag}</div>
+                                    <div class="real">${item.tag.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>
                                 </div>
                             </div>
-                            <div class="server-name">${item.name}</div>
+                            <div class="server-name">${item.name.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>
                             <div class="members">${item.members.toLocaleString('en-US')} members</div>
-                            <div class="description">${item.description}</div>
+                            <div class="description">${item.description.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>
                             <a href="https://discord.com/invite/${item.value}" class="invite-link">🔗 Join Server</a>
                         `;
                         document.getElementById('grid').appendChild(div);
